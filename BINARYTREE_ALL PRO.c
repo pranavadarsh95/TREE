@@ -268,14 +268,11 @@ void levelorder(struct bs*q)
 	      if(isqueueempty(z))
 		      break; 	
 	    	 q=dequeue(z);
-	        if(q)//q may be null so for preventing
-			{	 
 	    	printf(" %d",q->data);
 	   	 if(q->lf)
 	   	  enqueue(z,q->lf);
 	   	 if(q->rt)
-		  enqueue(z,q->rt);
-		    }
+		  enqueue(z,q->rt); 
 		}  
 		
 		
@@ -465,8 +462,6 @@ int main()
     root->lf->rt = newNode(5);
     root->rt->lf = newNode(6);
     root->rt->rt = newNode(7);
-  
-  
     
 	/*
     printf("PRE-ORDER ");
@@ -474,9 +469,9 @@ int main()
     printf("IN-ORDER ");
     inorder(root);printf("\n");
     printf("POST-ORDER ");
-    postorder(root);printf("\n");*/
+    postorder(root);printf("\n");
     printf("LEVEL-ORDER ");
-    levelorder(root);printf("\n"); /*    
+    levelorder(root);printf("\n");     
     printf("In order traversal of binary tree is :\n");
     inOrderIterative(root);
     printf("post order traversal of binary tree using two_stack is :\n");
